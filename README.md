@@ -1,4 +1,3 @@
-# DSA210-Term-Project
 # Weather, Mood and Productivity Analysis
 
 ---
