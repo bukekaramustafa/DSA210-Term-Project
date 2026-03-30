@@ -1,5 +1,5 @@
-# Weather, Mood and Productivity Analysis
-*DSA210 Term Project*
+# DSA 210 Term Project
+*Weather, Mood and Productivity Analysis*
 ---
 
 ## 1. Motivation
