@@ -1,39 +1,48 @@
-# DSA 210 Term Project
-*Weather, Mood and Productivity Analysis*
----
+# DSA210 Term Project  
+## Weather Conditions and Student Mood/Productivity Analysis
 
-## 1. Motivation
+### Project Overview
+This project investigates the relationship between daily weather conditions and university students’ mood and productivity levels.
 
-For my term project, I plan to study whether daily weather conditions have a measurable relationship with self-reported mood and productivity levels among university students. I chose this topic because weather is a daily environmental factor that may influence people’s emotional state and performance. This makes it an interesting data science problem that combines personal data with public environmental data.
+The study combines:
+- self-reported survey responses
+- exploratory data analysis (EDA)
+- visualization techniques
+- correlation analysis
+- hypothesis testing
 
----
+### Dataset
+The dataset includes:
+- mood
+- productivity
+- energy level
+- sleep duration
+- stress level
+- outdoor activity time
+- weather perception
+- negative events
 
-## 2. Research Question
+Data was collected through daily participant responses.
 
-*Main Question:*  
-•⁠  ⁠Is there a relationship between daily weather conditions and mood/productivity levels?
+### Exploratory Data Analysis
+The project includes:
+- histograms
+- boxplots
+- scatterplots
+- correlation heatmaps
 
-*Sub-Questions:*  
-•⁠  ⁠Do better weather conditions lead to higher mood levels?  
-•⁠  ⁠Is productivity affected by daily weather changes?  
-•⁠  ⁠Do factors such as sleep and negative events influence this relationship?
+These visualizations help identify relationships between mood, productivity, sleep, stress, and weather-related variables.
 
----
+### Hypothesis Testing
+Pearson correlation analysis was applied to test relationships between:
+- sleep duration and mood
+- stress and productivity
 
-## 3. Data Collection
+### Technologies Used
+- Python
+- Pandas
+- Seaborn
+- Matplotlib
+- SciPy
 
-The main dataset will be collected through a short daily Google Form survey completed by approximately 15–20 participants over 14 days. Each response will include variables such as overall mood, perceived productivity, energy level, sleep duration, and whether the participant experienced a negative event that day. All responses will be collected anonymously using participant IDs. Based on this design, I expect to obtain around 210–280 daily observations.
-
----
-
-## 4. External Data
-
-To enrich the dataset, I will combine the survey responses with public weather data for the same dates and location. These weather variables will include temperature, precipitation, humidity, cloud cover, and similar indicators obtained through a public weather API archive source.
-
----
-
-## 5. Expected Relationships
-
-It is expected that more favorable weather conditions (such as sunny or mild days) will be associated with higher mood and productivity levels. On the other hand, negative events and insufficient sleep may weaken or moderate this relationship.
-
----
+### Repository Structure
