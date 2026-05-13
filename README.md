@@ -46,3 +46,15 @@ Pearson correlation analysis was applied to test relationships between:
 - SciPy
 
 ### Repository Structure
+data/
+├── processed/
+│   └── data.csv
+
+notebooks/
+└── eda.ipynb
+
+### Conclusion
+Initial findings suggest that:
+- sleep duration positively affects mood
+- stress negatively affects productivity
+- weather perception may influence emotional well-being
