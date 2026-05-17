@@ -1,39 +1,63 @@
-# DSA 210 Term Project
-*Weather, Mood and Productivity Analysis*
----
+# DSA210 Term Project
 
-## 1. Motivation
+## Project Topic
 
-For my term project, I plan to study whether daily weather conditions have a measurable relationship with self-reported mood and productivity levels among university students. I chose this topic because weather is a daily environmental factor that may influence people’s emotional state and performance. This makes it an interesting data science problem that combines personal data with public environmental data.
+This project analyzes how daily factors such as sleep, stress, outdoor time, negative events, and weather perception are related to students' mood and productivity.
 
----
+The dataset contains daily survey-like observations from multiple participants. Each row represents one person's answers for one day.
 
-## 2. Research Question
+## Files
 
-*Main Question:*  
-•⁠  ⁠Is there a relationship between daily weather conditions and mood/productivity levels?
+- `data/data_synthetic.csv`: dataset used in the analysis
+- `notebooks/eda.ipynb`: exploratory data analysis, hypothesis testing, and simple machine learning model
+- `requirements.txt`: Python libraries needed to run the notebook
 
-*Sub-Questions:*  
-•⁠  ⁠Do better weather conditions lead to higher mood levels?  
-•⁠  ⁠Is productivity affected by daily weather changes?  
-•⁠  ⁠Do factors such as sleep and negative events influence this relationship?
+## Variables
 
----
+- `person_id`: participant number
+- `day`: survey day
+- `mood`: daily mood score
+- `productivity`: perceived productivity score
+- `energy`: energy level
+- `sleep_hours`: sleep duration
+- `negative_event`: whether a negative event happened that day
+- `stress`: stress level
+- `outdoor_time`: time spent outdoors
+- `weather_feeling`: perceived weather effect
 
-## 3. Data Collection
+## Main Analysis Steps
 
-The main dataset will be collected through a short daily Google Form survey completed by approximately 15–20 participants over 14 days. Each response will include variables such as overall mood, perceived productivity, energy level, sleep duration, and whether the participant experienced a negative event that day. All responses will be collected anonymously using participant IDs. Based on this design, I expect to obtain around 210–280 daily observations.
+1. Load and inspect the dataset
+2. Check missing values and summary statistics
+3. Visualize distributions and relationships
+4. Analyze correlations
+5. Test simple hypotheses
+6. Build a basic machine learning model to predict high mood
 
----
+## How to Run
 
-## 4. External Data
+Install the required libraries:
 
-To enrich the dataset, I will combine the survey responses with public weather data for the same dates and location. These weather variables will include temperature, precipitation, humidity, cloud cover, and similar indicators obtained through a public weather API archive source.
+```bash
+pip install -r requirements.txt
+```
 
----
+Then open the notebook:
 
-## 5. Expected Relationships
+```bash
+jupyter notebook notebooks/eda.ipynb
+```
 
-It is expected that more favorable weather conditions (such as sunny or mild days) will be associated with higher mood and productivity levels. On the other hand, negative events and insufficient sleep may weaken or moderate this relationship.
+## Note
 
----
+This project is mainly focused on practicing a complete data science workflow: data loading, EDA, interpretation, statistical testing, and basic prediction.
+
+## Limitations and Future Work
+
+This project has several limitations. First, the dataset is based on self-reported responses, which may include subjective bias. In addition, the observations were collected over a limited time period. Some variables, such as weather feeling, are also perception-based rather than objective measurements.
+
+For future work, real weather API data could be integrated into the analysis. A larger participant group and longer data collection period could improve the reliability of the findings. More advanced machine learning models could also be explored.
+
+## AI Assistance Disclosure
+
+AI tools were used to support code organization, formatting, and editing. The project topic, dataset structure, interpretations, and analysis decisions were reviewed and finalized by the student.
