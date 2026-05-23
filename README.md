@@ -137,6 +137,12 @@ The heatmap below summarizes the Pearson correlations between all numeric variab
 
 ![Correlation Matrix](figures/correlation_matrix.png)
 
+The Pearson correlation coefficient between two variables $X$ and $Y$ is computed as:
+
+$$r_{XY} = \frac{\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum_{i=1}^{n}(X_i - \bar{X})^2 \cdot \sum_{i=1}^{n}(Y_i - \bar{Y})^2}}$$
+
+where $\bar{X}$ and $\bar{Y}$ are the sample means of $X$ and $Y$ respectively, and $n$ is the number of observations.
+
 *EDA Interpretation:* Mood and productivity are strongly positively correlated. Sleep hours show a clear positive relationship with both mood and energy. Stress is negatively associated with productivity. Weather perception and outdoor time show milder but consistent effects on mood.
 
 ---
@@ -149,6 +155,18 @@ To test whether mood can be predicted from daily lifestyle inputs, a **Logistic 
 - **Features used:** `sleep_hours`, `stress`, `outdoor_time`, `weather_feeling`, `negative_event`, `energy`
 - **Train/test split:** 80% / 20%
 - **Preprocessing:** StandardScaler applied to all features
+
+### Model Formula
+
+Logistic regression estimates the probability of high mood using the sigmoid function:
+
+$$P(\text{High Mood} = 1 \mid \mathbf{x}) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p)}}$$
+
+where $x_1, x_2, \ldots, x_p$ are the feature values (sleep hours, stress, outdoor time, etc.) and $\beta_0, \beta_1, \ldots, \beta_p$ are the learned coefficients.
+
+The model is trained by minimizing the **log-loss** (binary cross-entropy):
+
+$$\mathcal{L} = -\frac{1}{n} \sum_{i=1}^{n} \left[ y_i \log(\hat{p}_i) + (1 - y_i) \log(1 - \hat{p}_i) \right]$$
 
 ### Confusion Matrix
 
@@ -168,6 +186,12 @@ The bar chart below shows which daily factors most strongly push mood up or down
 
 - **H₀ (Null Hypothesis):** Daily lifestyle factors have no significant relationship with mood or productivity.
 - **H₁ (Alternative Hypothesis):** At least one lifestyle factor significantly explains variance in mood or productivity scores.
+
+The significance of each correlation is evaluated using the $t$-statistic:
+
+$$t = r \sqrt{\frac{n - 2}{1 - r^2}}$$
+
+which follows a $t$-distribution with $n - 2$ degrees of freedom under $H_0$. A result is considered statistically significant at $p < 0.05$.
 
 Based on the correlation analysis and logistic regression results, the null hypothesis is **rejected** for multiple variables — particularly sleep hours, stress, and negative events, which show statistically meaningful relationships with mood.
 
